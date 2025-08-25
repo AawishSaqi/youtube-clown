@@ -79,6 +79,7 @@ export default function Reels({menucon}) {
                     )}
                     </div>
                     <p className="text-xs text-gray-500 mt-1">{reel.view}</p>
+                    <p className="text-xs text-gray-500 mt-1">{reel.view}</p>
                 </div>
             </div>
             );
