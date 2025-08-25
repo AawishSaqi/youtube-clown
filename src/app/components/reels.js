@@ -1,6 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
+import { data } from 'autoprefixer';
 
 export default function Reels({menucon}) {
     const reels = [
@@ -14,9 +15,16 @@ export default function Reels({menucon}) {
 
   const [hoveredId, setHoveredId] = useState(null);
   const [ismd , setIsmd] = useState(false);
+  const [issm, setIssm] = useState(false)
+  const [ismbl , setIsMbl] = useState(false)
+
 
   useEffect(()=> {
-    const handlereelscount = () => setIsmd(window.innerWidth <= 786);
+    const handlereelscount = () => 
+        {setIsmd(window.innerWidth <= 1000)
+          setIssm(window.innerWidth <= 768)
+          setIsMbl(window.innerWidth <= 640)
+        };
     handlereelscount();
     window.addEventListener('resize', handlereelscount);
     return()=> window.removeEventListener('resize', handlereelscount);
@@ -30,14 +38,14 @@ export default function Reels({menucon}) {
   
 
   return (
-    <div className={`flex flex-col  md:gap-6 w-full xl:mt-5 ${menucon===true? '':''}`}>
+    <div className={`flex flex-col  gap-6 w-full xl:mt-5 ${menucon===true? '':''}`}>
         <div className='flex xl:gap-3 xl:text-xl font-semibold  items-center'>
             <img src='/images/shorts.png' alt='shorts' className='w-6 h-max'/>
             <h1>Shorts</h1>
         </div>
 
         <div className=" flex gap-5  ">
-        {reels.slice(0, ismd ? 3 : 5).map((reel) => {
+        {reels.slice(0,ismbl?2: issm? 3: ismd ? 4 : 5).map((reel) => {
             const thumbnail = `https://img.youtube.com/vi/${reel.Id}/maxresdefault.jpg`;
 
 
@@ -47,7 +55,7 @@ export default function Reels({menucon}) {
             onMouseEnter={()=>setHoveredId(reel.Id)}
                 onMouseLeave={() => setHoveredId(null)}
                 onClick={() => window.open(`https://www.youtube.com/shorts/${reel.Id}`, '_blank')}
-                className={`${menucon===true? 'w-[230px] ':'w-[300px] h-[500px]'}`}
+                className={`h-full pb-3 ${menucon===true? 'w-[230px] ':'w-[300px] h-[500px]'}`}
                 style={{ pointerEvents: 'auto' }}>
 
                 <div>

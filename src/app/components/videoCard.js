@@ -34,14 +34,14 @@ export default function VideoCard({menucon, videos}) {
 
 
     return(
-            <div id="video-list" className="flex flex-wrap justify-between w-full">
+            <div id="video-list" className="flex flex-col sm:flex-wrap sm:flex-row justify-between w-full ">
                 {videos.map((video) => {
                 const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
                     return(
                         <div key={video.videoId} onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, "_blank")}
                             onMouseEnter={() => setHovered(video.videoId)}
                             onMouseLeave={() => setHovered(null)}
-                        className={`cursor-pointer h-max md:w-[370px] ${menucon===true? 'xl:w-[350px] ': 'xl:w-[405px] '}`}
+                        className={`cursor-pointer h-max md:w-[360px] sm:w-[300px] w-[100%] pb-3 xl:pb-0 ${menucon===true? 'xl:w-[350px] ': 'xl:w-[405px] '}`}
                         >
                             <div>
                                 <div  className="aspect-video rounded-2xl overflow-hidden cursor-pointer" 
@@ -56,8 +56,8 @@ export default function VideoCard({menucon, videos}) {
                                     ) : (
                                         <Image
                                             src={thumbnail}
-                                            width={402}
-                                            height={350}
+                                            width={2000}
+                                            height={1800}
                                             alt={video.title}
                                             className={` object-cover h-full w-full`}
                                         />
@@ -66,17 +66,17 @@ export default function VideoCard({menucon, videos}) {
 
                                 <div className={`flex pt-3 justify-between w-full`}>
                                      {/* ${menucon===true? 'xl:w-[355px]': 'xl:w-[405px] '} */}
-                                    <div className="flex justify-between">
-                                        <div className={`flex xl:mr-1 md:mr-2  justify-center items-center rounded-full bg-yellow-500 md:w-8 md:h-8 
+                                    <div className="flex justify-between sm:leading-none">
+                                        <div className={`flex xl:mr-1 mr-2  justify-center items-center rounded-full bg-yellow-500 sm:w-8 sm:h-8  h-8 w-8
                                                 ${menucon===true? '2xl:w-8 2xl:h-8 xl:w-7 xl:h-7'
                                                     :' 2xl:w-11 2xl:h-11 xl:w-8 xl:h-8'} `}>
                                             <h3 className={` text-black font-semibold  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
                                         </div>
                                         <div className={`full-w-max '}`}>
-                                            <h1 className={` opacity-95 xl:text-md `}>{video.title}</h1>
-                                            <h1 className={`xl:text-sm opacity-50`}>{video.channel}</h1>
+                                            <h1 className={`line-clamp-2 opacity-95 xl:text-md `}>{video.title}</h1>
+                                            <h1 className={`xl:text-sm sm:text-xs text-sm opacity-50`}>{video.channel}</h1>
 
-                                            <div className={`flex xl:gap-7 xl:gap-3 xl:text-sm opacity-50`}>
+                                            <div className={`flex xl:gap-7 gap-3 xl:text-sm sm:text-xs text-sm opacity-50`}>
                                                 <h1>{video.views}</h1>
                                                 <h1>{video.date}</h1>
                                             </div>

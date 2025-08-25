@@ -1,16 +1,8 @@
-// import Sidebar from "./sidebar";
-// import Slider from "react-slick";
-// import "slick-carousel/slick/slick.css";
-// import "slick-carousel/slick/slick-theme.css";
-// import {Swiper, SwiperSlide} from "swiper/react";
-// import { Navigation} from "swiper/modules";
-// import "swiper/css";
-// import "swiper/css/navigation";
 'use client';
 import '../globals.css';
 import React, { useState, useEffect } from "react";
 
-export default function Categories({handlevid}) {
+export default function Categories({handlevid,menucon}) {
     const [activeCategory, setActiveCategory]= useState("all")
     // const [videos, setVideos] = useState('')
 
@@ -33,13 +25,13 @@ export default function Categories({handlevid}) {
   // }
 
     return(
-      <div className=" flex gap-4">
+      <div className={`flex gap-4 xl:pl-8 xl:pt-7 md:pt-3 md:pb-3  pl-6 xl:pb-9 scrollbar-hide overflow-x-auto `}>
             {categories.map((category) =>{
                 return(
                 <button
                 key={category}
                 onClick={()=> setActiveCategory(category)}
-                className={`min-w-max px-[10px] xl:h-8 md:h-8 xl:text-sm md:text-sm font-semibold  cursor-pointer xl:rounded-lg md:rounded-lg  hover:bg-white hover:text-black ${activeCategory=== category? 'bg-white text-black': 'text-white bg-[#282828]'}`}>
+                className={`min-w-max px-[10px] h-8 text-sm  font-semibold  cursor-pointer rounded-lg  hover:bg-white hover:text-black ${activeCategory=== category? 'bg-white text-black': 'text-white bg-[#282828]'}`}>
                 {category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>
                 )

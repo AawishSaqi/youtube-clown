@@ -92,7 +92,7 @@ export default function VideoCard2 ({menucon}){
                     <div key={video.videoId} onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, "_blank")}
                         onMouseEnter={() => setHovered(video.videoId)}
                         onMouseLeave={() => setHovered(null)}
-                    className={`cursor-pointer h-max xl:mb-3 xl:pb-2 md:pb-4 md:w-[359px] ${menucon===true? 'w-[350px]': 'xl:w-[405px]'}`}
+                    className={`cursor-pointer h-max xl:mb-3 xl:pb-2 md:pb-4 pb-3 md:w-[359px] sm:w-[300px] w-full ${menucon===true? 'w-[350px]': 'xl:w-[405px]'}`}
                     >
                         <div>
                             <div  className="aspect-video rounded-2xl overflow-hidden cursor-pointer" 
@@ -138,16 +138,16 @@ export default function VideoCard2 ({menucon}){
                             </div> */}
                             <div className={`flex pt-3 justify-between ${menucon===true? 'xl:w-[350px]': 'xl:w-[405px] '}`}>
                                 <div className="flex justify-between">
-                                    <div className={`flex xl:mr-1 md:mr-2 md:px-2 md:h-7 justify-center items-center rounded-full bg-yellow-500 
+                                    <div className={`flex xl:mr-1 mr-2 sm:px-2 sm:h-7 w-8 h-8 justify-center items-center rounded-full bg-yellow-500 
                                             ${menucon===true? '2xl:w-8 2xl:h-8  '
                                                 :' 2xl:w-11 2xl:h-11'} `}>
                                         <h3 className={` text-black font-semibold  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
                                     </div>
                                     <div className={`full-w-max '}`}>
-                                        <h1 className={` opacity-95 xl:text-md `}>{video.title}</h1>
-                                        <h1 className={`xl:text-sm opacity-50`}>{video.channel}</h1>
+                                        <h1 className={`line-clamp-2 opacity-95 xl:text-md `}>{video.title}</h1>
+                                        <h1 className={`xl:text-sm text-xs opacity-50`}>{video.channel}</h1>
 
-                                        <div className={`flex xl:gap-7 xl:gap-3 xl:text-sm opacity-50`}>
+                                        <div className={`flex xl:gap-7 xl:gap-3 xl:text-sm sm:text-xs text-sm opacity-50`}>
                                             <h1>{video.views}</h1>
                                             <h1>{video.date}</h1>
                                         </div>
