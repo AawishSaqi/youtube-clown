@@ -25,7 +25,7 @@ export default function Categories({handlevid,menucon}) {
   // }
 
     return(
-      <div className={`flex gap-4 xl:pl-8 xl:pt-7 md:pt-3 md:pb-3  pl-6 xl:pb-9 scrollbar-hide overflow-x-auto `}>
+      <div className={`flex gap-4 xl:pl-8 xl:pt-7 md:py-3 py-2  pl-6 xl:pb-9  scrollbar-hide overflow-x-auto border-b-1 border-[#808080] sm:border-none `}>
             {categories.map((category) =>{
                 return(
                 <button
