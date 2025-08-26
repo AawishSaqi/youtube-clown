@@ -7,21 +7,21 @@
 }
 
 /* Make the scrollbar transparent by default */
-:global(.wrapper::-webkit-scrollbar) {
+.wrapper::-webkit-scrollbar {
   width: 8px;
 }
 
-:global(.wrapper::-webkit-scrollbar-track) {
+.wrapper::-webkit-scrollbar-track {
   background: transparent;
 }
 
-:global(.wrapper::-webkit-scrollbar-thumb) {
+.wrapper::-webkit-scrollbar-thumb {
   background-color: transparent;
   border-radius: 4px;
 }
 
 /* When the wrapper is hovered, turn scrollbar thumb white */
-:global(.wrapper:hover::-webkit-scrollbar-thumb) {
+.wrapper:hover::-webkit-scrollbar-thumb {
   background-color: white;
 }
 
@@ -43,24 +43,24 @@
 }
 
 /* Make the scrollbar thick */
-:global(.heroScroll::-webkit-scrollbar) {
+.heroScroll::-webkit-scrollbar {
   width: 12px; /* thickness */
   height: 12px; /* for horizontal scrollbars */
 }
 
 /* Transparent background */
-:global(.heroScroll::-webkit-scrollbar-track) {
+.heroScroll::-webkit-scrollbar-track {
   background: white;
 }
 
 /* Scrollbar thumb (example: gray) */
-:global(.heroScroll::-webkit-scrollbar-thumb) {
+.heroScroll::-webkit-scrollbar-thumb {
   background-color: white;
   border-radius: 6px;
 }
 
 /* Hover effect for thumb */
-:global(.heroScroll::-webkit-scrollbar-thumb:hover) {
+.heroScroll::-webkit-scrollbar-thumb:hover {
   background-color: white;
 }
 
