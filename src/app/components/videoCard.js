@@ -34,7 +34,7 @@ export default function VideoCard({menucon, videos}) {
 
 
     return(
-            <div id="video-list" className="flex flex-col sm:flex-wrap sm:flex-row justify-between w-full ">
+            <div id="video-list" className="flex flex-col sm:flex-wrap sm:flex-row justify-start xl:gap-3 w-full ">
                 {videos.map((video) => {
                 const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
                     return(

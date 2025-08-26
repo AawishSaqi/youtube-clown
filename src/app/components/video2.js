@@ -85,7 +85,7 @@ export default function VideoCard2 ({menucon}){
     },
   ]
   return(
-        <div className="flex flex-wrap justify-between w-full ">
+        <div className="flex flex-wrap justify-start xl:gap-3 w-full ">
             {videos.map((video) => {
             const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
                 return(
