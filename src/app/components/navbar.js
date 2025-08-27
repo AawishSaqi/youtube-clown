@@ -23,12 +23,12 @@ export default function Navbar({senddata, menucon}) {
     
   return (
         <div className=' flex w-full justify-between  sm:justify-center md:justify-between  
-            items-center  xl:pr-11 md:pr-8 pr-1 sm:pr-6 pl-3 md:pl-0  sm:pt-1 sm:pt-0 
+            items-center  xl:pr-11 md:pr-8 pr-1 sm:pr-6 pl-3 md:pl-0  sm:pt-1  md:pt-0 
                 border-b-[.01vw] border-[#808080] sm:border-none'>
 
-            <div className={`flex items-center xl:gap-4 md:gap-5 sm:gap-5 gap-5 w-full 
-                 xl:mr-20  sm:w-[59%]  md:w-[32.3%] xl:w-auto   md:pl-4  pt-2 sm:pb-2   
-                    ${menucon===true? 'md:bg-[#121111] xl:bg-transparent':''}`}
+            <div className={`flex items-center xl:gap-4 md:gap-5 sm:gap-5 gap-5 w-full ${mblsearch? 'hidden ':'flex'}
+                 xl:mr-20  sm:w-[59%]  md:w-[27.2%] xl:w-auto   md:pl-4  pt-2 sm:pb-2   
+                    ${menucon===true? 'md:bg-[#121111] lg:bg-transparent':''}`}
             >
                 <div onClick={togglemenu}  className={`hidden sm:flex w-max  justify-center items-center py-[7px] px-[5px]  
                 border-1  hover:bg-[#282828]   border-transparent hover:border-white/20 rounded-full ${menucon===true? 'border-white/20 bg-[#282828]':'bg-transparent'} `}>
@@ -49,10 +49,10 @@ export default function Navbar({senddata, menucon}) {
 
             <div>
                 <div className='hidden sm:flex  items-center md:gap-4 sm:gap-3 gap-4 mx-3 md:mx-0 h-10  '>
-                    <search className='flex h-full  md:justify-center sm:justify-between  items-center text-center 
+                    <search className='flex h-full   sm:justify-between lg:justify-between  items-center text-center 
                         sm:border-1 border-[#282828] hover:border-blue-400  rounded-full'
                     >
-                        <input className={`xl:w-130 md:w-35  sm:w-9 xl:pl-5 sm:pl-3 xl:text-md 
+                        <input className={`xl:w-130 md:w-[30%] lg:w-80  sm:w-[40%] xl:pl-5 sm:pl-3 xl:text-md 
                             opacity-50   rounded-l-full  text-white outline-none border-r-1 border-[#282828] 
                             hover:border-blue-400`} 
                             type='text' placeholder='Search'>
@@ -72,7 +72,7 @@ export default function Navbar({senddata, menucon}) {
 
             <div className={`hidden sm:flex justify-center items-center md:gap-3 sm:gap-4  gap-3 `}>
 
-                <div className='flex gap-2 items-center md:px-4 sm:px-3 px-3 md:gap-5 md:h-10 sm:h-9 h-9  
+                <div className='flex gap-2 items-center md:px-4 sm:px-3 px-3 md:gap-5  xl:gap-2 md:h-10 sm:h-9 h-9  
                     rounded-full bg-[#282828]'>
                     <h1 className='text-3xl  '>+</h1>
                     <h1 className='text-sm  sm:font-semibold ' >Create</h1> 
@@ -87,7 +87,7 @@ export default function Navbar({senddata, menucon}) {
             </div>
 
             
-            <div className={`w-full flex sm:hidden  items-center ${mblsearch? 'flex h-12 ':'hidden'}`}>
+            <div className={`w-full flex sm:hidden  justify-between  items-center ${mblsearch? 'flex h-12 ':'hidden'}`}>
                 <div onClick={removesearch} 
                     className='h-10 px-3 flex justify-center items-center hover:bg-white/10 
                         backdrop-blur shadow hover:border-1 border-[#808080] rounded-full'>
@@ -96,7 +96,7 @@ export default function Navbar({senddata, menucon}) {
                 <div className='flex sm:hidden  items-center  mx-3 gap-3  h-8  '>
                     <search className='flex h-full  items-center text-center border-1 border-[#282828] bg-white/10 backdrop-blur-md shadow rounded-full'
                     >
-                        <input className={` opacity-50 w-80  pl-3 rounded-l-full  text-white outline-none border-r-1 border-[#282828] hover:border-blue-400`} 
+                        <input className={` opacity-50    pl-3 rounded-l-full  text-white outline-none border-r-1 border-[#282828] hover:border-blue-400`} 
                             type='text' placeholder='Search'>
                         </input>
                             

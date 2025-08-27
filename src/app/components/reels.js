@@ -1,7 +1,6 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Image from 'next/image';
-import { data } from 'autoprefixer';
 
 export default function Reels({menucon}) {
     const reels = [
@@ -17,6 +16,7 @@ export default function Reels({menucon}) {
   const [ismd , setIsmd] = useState(false);
   const [issm, setIssm] = useState(false)
   const [ismbl , setIsMbl] = useState(false)
+  const [issmall, setIsSmall] = useState(false)
 
 
   useEffect(()=> {
@@ -24,6 +24,7 @@ export default function Reels({menucon}) {
         {setIsmd(window.innerWidth <= 1000)
           setIssm(window.innerWidth <= 768)
           setIsMbl(window.innerWidth <= 640)
+          setIsSmall(window.innerWidth<= 569)
         };
     handlereelscount();
     window.addEventListener('resize', handlereelscount);
@@ -45,7 +46,7 @@ export default function Reels({menucon}) {
         </div>
 
         <div className=" flex gap-5  ">
-        {reels.slice(0,ismbl?2: issm? 3: ismd ? 4 : 5).map((reel) => {
+        {reels.slice(0,issmall? 2: ismbl?3: issm? 3: ismd ? 4 : 5).map((reel) => {
             const thumbnail = `https://img.youtube.com/vi/${reel.Id}/maxresdefault.jpg`;
 
 

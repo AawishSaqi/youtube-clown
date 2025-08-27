@@ -71,29 +71,29 @@ export default function Home(){
         {/* ////////////////////////////////////navbar and cat  background///////////////////////////////////// */}
         <div className={`z-10 xl:w-[99%] md:w-[98.8%] sm:w-[98.4%] xl:h-30 md:h-27 sm:h-26 h-24 w-full  fixed top-0 backdrop-blur   bg-black/7 transition-transform duration-300 ${showHeader? 'translate-y-0':'-translate-y-full'}`}></div>
                     {/* ///////////////////////////Navbar//////////////////////////// */}
-        <div className={`z-20 w-[100%] fixed xl:sticky  top-0 transition-transform duration-300  ${showHeader? 'translate-y-0':'-translate-y-full'}`}>
+        <div className={`z-20 w-[100%] fixed lg:sticky  top-0 transition-transform duration-300  ${showHeader? 'translate-y-0':'-translate-y-full'}`}>
           <Navbar senddata={handlemenu} menucon={menucon}/>
         </div>
         
       <div className='flex h-screen'>
-        <div className={`z-50 hidden sm:block ${styles.wrapper} ${menucon===true? 'xl:w-[17.8%] sm:absolute xl:sticky  sm:w-[31%] md:top-11 sm:top-13 sm:bg-[#121111] xl:bg-transparent': 'sm:hidden xl:block xl:w-max'}`}>
+        <div className={`z-50 hidden sm:block ${styles.wrapper} ${menucon===true? 'xl:w-[17.8%] lg:w-[16%] sm:absolute lg:sticky  sm:w-[31%] md:w-[26%] md:top-13 sm:top-13 sm:bg-[#121111] lg:bg-transparent': 'sm:hidden  lg:block  lg:w-max'}`}>
           <Sidebar menucon={menucon} handlevid={handlevid} />
         </div>
-        <div className={` xl:pr-7  ${styles.wrapper}  ${menucon===true? 'xl:w-[83.3%]': 'xl:w-[96%] md:w-full'}`}>
+        <div className={`lg:pr-7  ${styles.wrapper}  ${menucon===true? 'xl:w-[83.3%] lg:w-[84%]': 'xl:w-[96%] lg:w-[97%] md:w-full'}`}>
 
-            <div className={`z-10  fixed xl:top-10 md:top-14 sm:top-16 top-12  md:w-[98%] sm:w-[97.5%] w-[98%]
-                ${menucon===true?'xl:w-[79.6%]  ':'xl:w-[92.5%]  '} `}>
+            <div className={`z-10  fixed xl:top-10 md:top-14 sm:top-16 top-12  md:w-[98%]  sm:w-[97.5%] w-[98%]
+                ${menucon===true?'xl:w-[79.6%] lg:w-[83%] ':'xl:w-[92.5%] lg:w-[94%] '} `}>
               <Categories handlevid={handlevid}  menucon={menucon}/>
             </div> 
 
-            <div className='z-0  w-full xl:pt-21  md:pt-29 sm:pt-30 pt-30 xl:pl-[9px] xl:pl-[8px] '>
+            <div className='z-0  w-full xl:pt-21  md:pt-29 sm:pt-30 lg:pt-16 pt-30 xl:pl-[9px] xl:pl-[8px] '>
               <div className={` md:pb-4 sm:pb-3 sm:px-4 px-5 xl:p-0 `}>
                   <VideoCard  menucon={menucon} videos={videos}/>
               </div>
               <div className='z-0 px-4 xl:p-0'>
                 <Reels menucon={menucon}/>  
               </div>
-              <div className='px-4   md:pt-15 sm:pt-7   xl:p-0'>
+              <div className='px-4   md:pt-15 sm:pt-7 xl:pt-10   xl:p-0'>
                 <VideoCard2 menucon={menucon}/>
               </div>
             </div>
