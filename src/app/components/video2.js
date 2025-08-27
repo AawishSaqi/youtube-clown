@@ -85,14 +85,14 @@ export default function VideoCard2 ({menucon}){
     },
   ]
   return(
-        <div className="flex flex-wrap justify-start xl:gap-3 w-full ">
+        <div className="flex flex-wrap justify-start gap-3 w-full ">
             {videos.map((video) => {
             const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
                 return(
                     <div key={video.videoId} onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, "_blank")}
                         onMouseEnter={() => setHovered(video.videoId)}
                         onMouseLeave={() => setHovered(null)}
-                    className={`cursor-pointer h-max xl:mb-3 xl:pb-2 md:pb-4 pb-3 md:w-[359px] sm:w-[300px] w-full ${menucon===true? 'w-[350px]': 'xl:w-[405px]'}`}
+                    className={`cursor-pointer h-max xl:mb-3 xl:pb-2 md:pb-4 pb-3 md:w-[32%]  sm:w-[49%] w-full ${menucon===true? 'xl:w-[32.5%] lg:w-[32.3%] ': 'xl:w-[32.6%] lg:w-[32.4%]'}`}
                     >
                         <div>
                             <div  className="aspect-video rounded-2xl overflow-hidden cursor-pointer" 

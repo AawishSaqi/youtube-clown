@@ -34,14 +34,14 @@ export default function VideoCard({menucon, videos}) {
 
 
     return(
-            <div id="video-list" className="flex flex-col sm:flex-wrap sm:flex-row justify-start xl:gap-3 w-full ">
+            <div id="video-list" className="w-[100%] flex flex-col sm:flex-wrap sm:flex-row justify-start gap-3 w-full ">
                 {videos.map((video) => {
                 const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
                     return(
                         <div key={video.videoId} onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, "_blank")}
                             onMouseEnter={() => setHovered(video.videoId)}
                             onMouseLeave={() => setHovered(null)}
-                        className={`cursor-pointer h-max md:w-[360px] sm:w-[300px] w-[100%] pb-3 xl:pb-0 ${menucon===true? 'xl:w-[350px] ': 'xl:w-[405px] '}`}
+                        className={`cursor-pointer h-max md:w-[32%] xl:w-[32%]  sm:w-[49%] w-[100%] pb-3 xl:pb-0 ${menucon===true? 'lg:w-[32.3%] ': ' lg:w-[32%] '}`}
                         >
                             <div>
                                 <div  className="aspect-video rounded-2xl overflow-hidden cursor-pointer" 
