@@ -2,11 +2,11 @@
 import '../globals.css';
 import React, { useState, useEffect } from "react";
 
-export default function Categories({handlevid,menucon}) {
+export default function Categories({handlevid}) {
     const [activeCategory, setActiveCategory]= useState("all")
     // const [videos, setVideos] = useState('')
 
-        const categories = ["all", "music", "pakdrama", "Mixes", "Indian", "Rythem", "News", "Reverberation",
+        const categories = ["all", "music", "drama", "Mixes", "Indian", "Rythem", "News", "Reverberation",
         "Nusrat", "Dramedy", "Debugging", "Live","Melodies", "Animated Films", "Birds", "Recently",
         "Watched" , "New","Trending", "Popular","Comedy", "Entertainment", "Movies", "TV Shows", 
         "Gaming", "Sports", "Learning", "Technology", "Travel", "Food", "Fitness", "Lifestyle"]

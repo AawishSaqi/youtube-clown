@@ -45,7 +45,7 @@ export default function Reels({menucon}) {
             <h1>Shorts</h1>
         </div>
 
-        <div className=" flex gap-5  ">
+        <div className=" flex gap-5 ">
         {reels.slice(0,issmall? 2: ismbl?3: issm? 3: ismd ? 4 : 5).map((reel) => {
             const thumbnail = `https://img.youtube.com/vi/${reel.Id}/maxresdefault.jpg`;
 
@@ -81,8 +81,8 @@ export default function Reels({menucon}) {
                     </div>
 
                     <div className='px-2 '>
-                      <h1 className='text-sm line-clamp-2'>{reel.title}</h1>
-                      <p className="text-xs text-gray-500 mt-1">{reel.view}</p>
+                      <h1 className=' line-clamp-2'>{reel.title}</h1>
+                      <p className="text-sm text-gray-500 mt-1">{reel.view}</p>
                     </div>
                     
                 </div>

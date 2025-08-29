@@ -8,6 +8,7 @@ import VideoCard from './components/videoCard';
 import Reels from './components/reels';
 import VideoCard2 from './components/video2';
 import styles from './wrapper.module.css';
+import Try from './components/try';
 
 
 export default function Home(){
@@ -25,6 +26,7 @@ export default function Home(){
   }
 
    function handlevid (data){
+
     setVideos(data)
    }
 
@@ -68,8 +70,8 @@ export default function Home(){
               <Categories handlevid={handlevid}  menucon={menucon}/>
             </div> 
 
-            <div className='z-0  w-full flex flex-col  xl:pt-21  md:pt-29 sm:pt-30 lg:pt-19 pt-30 xl:pl-[9px]  px-4 lg:pr-4  '>
-              <div className={` `}>
+            <div className='z-0  w-full flex flex-col  xl:pt-0  md:pt-29 sm:pt-30 lg:pt-19 pt-30 xl:pl-[9px]  px-4 lg:pr-4  '>
+              {/* <div className={` `}>
                   <VideoCard  menucon={menucon} videos={videos} searchdata={searchdata} />
               </div>
               <div className='z-0 '>
@@ -77,11 +79,12 @@ export default function Home(){
               </div>
               <div className='   md:pt-15 sm:pt-7 xl:pt-10   xl:p-0'>
                 <VideoCard2 menucon={menucon}/>
-              </div>
+              </div> */}
+
+            <div className='pt-20 flex justify-self-center'>
+              <Try menucon={menucon} videos={videos} searchdata={searchdata}/>
+            </div>
             </div> 
-          {/* <div className='pt-20 flex justify-self-center'>
-            <Try menucon={menucon}/>
-          </div> */}
 
         </div>
       </div>
