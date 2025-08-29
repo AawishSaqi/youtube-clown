@@ -115,34 +115,13 @@ export default function VideoCard2 ({menucon}){
                                 )}
                             </div>
 
-                            {/* <div className={`flex pt-3 justify-between w-full`}>
-                                <div className="flex justify-between">
-                                    <div className={`flex xl:mr-1  justify-center items-center rounded-full bg-yellow-500 
-                                            ${menucon===true? '2xl:w-8 2xl:h-8 xl:w-7 xl:h-7'
-                                                :' 2xl:w-11 2xl:h-11 xl:w-8 xl:h-8'} `}>
-                                        <h3 className={` text-black  ${menucon===true? 'xl:text-lg font-semibold ':'xl:text-xl xl:text-xl'}`}>{video.channel[0]}</h3>
-                                    </div>
-                                    <div className={`full-w-max`}>
-                                        <h1 className={` opacity-95 xl:text-md `}>{video.title}</h1>
-                                        <h1 className={`2xl:text-lg opacity-50`}>{video.channel}</h1>
-
-                                        <div className={`flex 2xl:gap-4 xl:gap-3 2xl:text-lg opacity-50`}>
-                                            <h1>{video.views}views</h1>
-                                            <h1>{video.date}</h1>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div>
-                                    <FontAwesomeIcon className="2xl:text-2xl" icon={faEllipsisV} />
-                                </div>
-                            </div> */}
                             <div className={`flex pt-3 justify-between ${menucon===true? 'xl:w-[350px]': 'xl:w-[405px] '}`}>
                                 <div className="flex justify-between">
                                     <div className={`xl:mr-1 mr-2 h-max justify-center items-center rounded-full bg-yellow-500 `}>
                                         <h3 className={`flex justify-center items-center w-7 h-7 text-black font-semibold  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
                                     </div>
                                     <div className={`full-w-max '}`}>
-                                        <h1 className={`line-clamp-2 opacity-95 xl:text-md `}>{video.title}</h1>
+                                        <h1 className={`line-clamp-2 leading-5 opacity-95 xl:text-md `}>{video.title}</h1>
                                         <h1 className={`xl:text-sm text-xs opacity-50`}>{video.channel}</h1>
 
                                         <div className={`flex xl:gap-7 xl:gap-3 xl:text-sm sm:text-xs text-sm opacity-50`}>

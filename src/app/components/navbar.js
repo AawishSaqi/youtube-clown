@@ -40,7 +40,9 @@ export default function Navbar({senddata, menucon, handleSearching }) {
         // Handle Enter key to search with enter 
     const handleKeyDown = (e) => {
         if (e.key === "Enter") {
-        handlesearch();
+            console.log("enter passed", query)
+        handlesearch(query);
+        setQuery("")
         }
     };
 
@@ -102,10 +104,11 @@ export default function Navbar({senddata, menucon, handleSearching }) {
                     <search className='flex h-full   sm:justify-between lg:justify-between  items-center text-center 
                         sm:border-1 border-[#282828] hover:border-blue-400  rounded-full'
                     >
-                        <input onChange={(e) => setQuery(e.target.value)} onKeyDown={handleKeyDown}  className={`xl:w-130 md:w-[100%] lg:w-80  sm:w-[40%] xl:pl-5 sm:pl-3 xl:text-md 
+                        <input onChange={(e) => setQuery(e.target.value)} onKeyDown={handleKeyDown}
+                          className={`xl:w-130 md:w-[100%] lg:w-80  sm:w-[40%] xl:pl-5 sm:pl-3 xl:text-md 
                             opacity-50   rounded-l-full  text-white outline-none border-r-1 border-[#282828] 
                             hover:border-blue-400`} 
-                            type='text' placeholder='Search'>
+                            type='text' value={query} placeholder='Search'>
                         </input>
                             
                         <button onClick={handlesearch} className=' xl:px-7 md:px-5 sm:px-5 h-full rounded-r-full sm:bg-white/10 sm:backdrop-blur-md shadow  text-white'>
