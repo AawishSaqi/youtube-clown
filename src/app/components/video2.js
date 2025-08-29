@@ -138,10 +138,8 @@ export default function VideoCard2 ({menucon}){
                             </div> */}
                             <div className={`flex pt-3 justify-between ${menucon===true? 'xl:w-[350px]': 'xl:w-[405px] '}`}>
                                 <div className="flex justify-between">
-                                    <div className={`flex xl:mr-1 mr-2 sm:px-2 sm:h-7 w-8 h-8 justify-center items-center rounded-full bg-yellow-500 
-                                            ${menucon===true? '2xl:w-8 2xl:h-8  '
-                                                :' 2xl:w-11 2xl:h-11'} `}>
-                                        <h3 className={` text-black font-semibold  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
+                                    <div className={`xl:mr-1 mr-2 h-max justify-center items-center rounded-full bg-yellow-500 `}>
+                                        <h3 className={`flex justify-center items-center w-7 h-7 text-black font-semibold  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
                                     </div>
                                     <div className={`full-w-max '}`}>
                                         <h1 className={`line-clamp-2 opacity-95 xl:text-md `}>{video.title}</h1>

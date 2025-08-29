@@ -4,11 +4,11 @@ import Image from 'next/image';
 
 export default function Reels({menucon}) {
     const reels = [
-      { Id: 'S-9MuPhnB4g', title:'', view: '2 months ago' },
-      { Id: 'omyIsw6NoTw', title:'', view: '1 year ago' },
-      { Id: '-aSemdpz6CA', title:'', view: '1 hour ago' },
-      { Id: 'oJJ0ctSFlmU', title:'', view: '2 days ago' },
-      { Id: '5QtOcSUxO6E', title:'', view: '3 hours ago' },
+      { Id: 'S-9MuPhnB4g', title:'The man found newly hatched quail eggs abandoned on the road and then...', view: '2 months ago' },
+      { Id: 'omyIsw6NoTw', title:'Thor Vs Ironman in sakaar | #shorts', view: '1 year ago' },
+      { Id: '-aSemdpz6CA', title:'Demon ne bachaya Do Hee ko❤️my demon kdrama couple love whatsapp status', view: '1 hour ago' },
+      { Id: 'oJJ0ctSFlmU', title:'pitbull dog Version ☠️', view: '2 days ago' },
+      { Id: '5QtOcSUxO6E', title:'잃어버린 땅콩을 만들어 주었더니 고양이 반응 #cat #고양이 #고양이일상 #funny', view: '3 hours ago' },
     ];
 
 
@@ -59,7 +59,7 @@ export default function Reels({menucon}) {
                 className={`h-full pb-3 ${menucon===true? 'w-[230px] ':'w-[300px] h-[500px]'}`}
                 style={{ pointerEvents: 'auto' }}>
 
-                <div>
+                <div className='flex flex-col gap-2'>
 
                     <div className={`relative  aspect-[9/16] rounded-2xl overflow-hidden ${menucon===true? '':''}`}>
                     {hoveredId === reel.Id ? (
@@ -79,7 +79,11 @@ export default function Reels({menucon}) {
                         />
                     )}
                     </div>
-                    <p className="text-xs text-gray-500 mt-1">{reel.view}</p>
+
+                    <div className='px-2 '>
+                      <h1 className='text-sm line-clamp-2'>{reel.title}</h1>
+                      <p className="text-xs text-gray-500 mt-1">{reel.view}</p>
+                    </div>
                     
                 </div>
             </div>
