@@ -4,51 +4,27 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faEllipsisV } from "@fortawesome/free-solid-svg-icons";
 
-export default function VideoCard({menucon, videos}) {
-
+export default function VideoCard({ menucon, videos, searchdata}) {
+    console.log(searchdata)
     const [hovered, setHovered] = useState(null);
-
-        // const videos = [
-        //     {
-        //     videoId: 'nTmaCJ0yDMw',
-        //     title: 'Marju koi Title Song | Ahaan, Aneet | Tanishk Bagchi, Faheem Abdullah, Arslan| Irshad Kamil',
-        //     channel:'YRF',
-        //     views: '67.5M views',
-        //     date: '2 days ago'
-        //     },
-        //     {
-        //     videoId: 'fvMBeY2g3hg',
-        //     title: 'Rajab Butt Videos Viral Full EXPOSED ✌️',
-        //     channel:'KashiKing Roast',
-        //     views: '138k views',
-        //     date: '1 week ago'
-        //     },
-        //     {
-        //     videoId: 'RzE7g8VJi-A',
-        //     title: 'Sher Episode 21 | Danish Taimoor | Sarah Khan | 30 July 2025 [ENG SUB] ARY Digital Drama',
-        //     channel:'ARY Digital HD ',
-        //     views: '16M views',
-        //     date: '1 month ago'
-        //     }
-        // ];
 
 
     return(
-            <div id="video-list" className="w-[100%] flex flex-col sm:flex-wrap sm:flex-row justify-start gap-3 w-full ">
-                {videos.map((video) => {
-                const thumbnail = `https://img.youtube.com/vi/${video.videoId}/hqdefault.jpg`;
+            <div id="video-list" className="w-[100%] line-clamp-1 flex flex-col sm:flex-wrap sm:flex-row justify-start gap-3 w-full ">
+                {(searchdata.length >0 ? searchdata:videos).map((video) => {
+                const thumbnail = `https://img.youtube.com/vi/${video.Id}/hqdefault.jpg`;
                     return(
-                        <div key={video.videoId} onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, "_blank")}
-                            onMouseEnter={() => setHovered(video.videoId)}
+                        <div key={video.Id} onClick={() => window.open(`https://www.youtube.com/watch?v=${video.Id}`, "_blank")}
+                            onMouseEnter={() => setHovered(video.Id)}
                             onMouseLeave={() => setHovered(null)}
-                        className={`cursor-pointer h-max md:w-[32%] xl:w-[32%]  sm:w-[49%] w-[100%] pb-3 xl:pb-0 ${menucon===true? 'lg:w-[32.3%] ': ' lg:w-[32%] '}`}
+                        className={`cursor-pointer h-max md:w-[32.2%]   sm:w-[48.9%] w-[100%] pb-3 xl:pb-0 ${menucon===true? 'lg:w-[32.3%] xl:w-[32.5%] ': 'xl:w-[32.6%] lg:w-[32.43%] '}`}
                         >
                             <div>
                                 <div  className="aspect-video rounded-2xl overflow-hidden cursor-pointer" 
-                                    onClick={() => window.open(`https://www.youtube.com/watch?v=${video.videoId}`, "_blank")}>
-                                    {hovered === video.videoId ? (
+                                    onClick={() => window.open(`https://www.youtube.com/watch?v=${video.Id}`, "_blank")}>
+                                    {hovered === video.Id ? (
                                         <iframe
-                                        src={`https://www.youtube.com/embed/${video.videoId}?autoplay=1&mute=1&controls=1&loop=1&playlist=${video.videoId}`}
+                                        src={`https://www.youtube.com/embed/${video.Id}?autoplay=1&mute=1&controls=1&loop=1&playlist=${video.Id}`}
                                         className={`h-full w-full`}
                                         allow="autoplay; encrypted-media"
                                         allowFullScreen
@@ -67,10 +43,8 @@ export default function VideoCard({menucon, videos}) {
                                 <div className={`flex pt-3 justify-between w-full`}>
                                      {/* ${menucon===true? 'xl:w-[355px]': 'xl:w-[405px] '} */}
                                     <div className="flex justify-between sm:leading-none">
-                                        <div className={`flex xl:mr-1 mr-2  justify-center items-center rounded-full bg-yellow-500 sm:w-8 sm:h-8  h-8 w-8
-                                                ${menucon===true? '2xl:w-8 2xl:h-8 xl:w-7 xl:h-7'
-                                                    :' 2xl:w-11 2xl:h-11 xl:w-8 xl:h-8'} `}>
-                                            <h3 className={` text-black font-semibold  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
+                                        <div className={`flex xl:mr-1 mr-2  justify-center items-center rounded-full bg-yellow-500   h-max`}>
+                                            <h3 className={` text-black font-semibold uppercase w-7 h-7 flex justify-center items-center  ${menucon===true? '2xl:text-lg  ':'2xl:text-2xl xl:text-lg'}`}>{video.channel[0]}</h3>
                                         </div>
                                         <div className={`full-w-max '}`}>
                                             <h1 className={`line-clamp-2 opacity-95 xl:text-md `}>{video.title}</h1>

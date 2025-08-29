@@ -1,11 +1,61 @@
 'use client'
-import { use, useState } from 'react';
+import { use, useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBell, faMicrophone, faSearch,faBars } from '@fortawesome/free-solid-svg-icons';
 
-export default function Navbar({senddata, menucon}) {
-      const [menu , setMenu] = useState(false)
-      const [mblsearch, setmblsearch] = useState(false)
+export default function Navbar({senddata, menucon, handleSearching }) {
+    const [menu , setMenu] = useState(false)
+    const [mblsearch, setmblsearch] = useState(false)
+      
+    const [data ,setData] = useState([])
+    const [query , setQuery] = useState('')
+    const [result , setResult] = useState([])
+    
+    ////////////////////typing ==== searching/////////////
+    useEffect(() => {
+        async function fetchData() {
+        const files = ["all.json","music.json", "games.json","indian.json","news.json","drama.json","sports.json"];
+        
+        const results = await Promise.all(
+            files.map((f) => fetch(`/data/${f}`).then((res) => res.json()))
+        )
+    
+        setData(results.flat())
+        }
+        fetchData();
+    },[])
+        //////////to stop searching while typing///////////////
+        const handlesearch = () => {
+        if(!query.trim()){
+            setResult([])
+            return;
+        }
+        const filtered = data.filter((item) => 
+        JSON.stringify(item).toLowerCase().includes(query.toLowerCase()))
+    
+        setResult(filtered)
+        handleSearching(filtered)
+        }
+    
+        // Handle Enter key to search with enter 
+    const handleKeyDown = (e) => {
+        if (e.key === "Enter") {
+        handlesearch();
+        }
+    };
+
+    useEffect(()=> {
+            const handleEscsearch = (e)=>{
+        if(e.key === "Escape"){
+            setmblsearch(false)
+        }
+    }
+    window.addEventListener('keydown', handleEscsearch)
+    return () => window.removeEventListener('keydown', handleEscsearch)
+    })
+
+
+
 
         const togglemenu= ()=>{
             setMenu(!menu)
@@ -52,15 +102,13 @@ export default function Navbar({senddata, menucon}) {
                     <search className='flex h-full   sm:justify-between lg:justify-between  items-center text-center 
                         sm:border-1 border-[#282828] hover:border-blue-400  rounded-full'
                     >
-                        <input className={`xl:w-130 md:w-[30%] lg:w-80  sm:w-[40%] xl:pl-5 sm:pl-3 xl:text-md 
+                        <input onChange={(e) => setQuery(e.target.value)} onKeyDown={handleKeyDown}  className={`xl:w-130 md:w-[100%] lg:w-80  sm:w-[40%] xl:pl-5 sm:pl-3 xl:text-md 
                             opacity-50   rounded-l-full  text-white outline-none border-r-1 border-[#282828] 
                             hover:border-blue-400`} 
                             type='text' placeholder='Search'>
                         </input>
                             
-                        <button
-                            onClick={setsearch}
-                             className=' xl:px-7 md:px-5 sm:px-5 h-full rounded-r-full sm:bg-white/10 sm:backdrop-blur-md shadow  text-white'>
+                        <button onClick={handlesearch} className=' xl:px-7 md:px-5 sm:px-5 h-full rounded-r-full sm:bg-white/10 sm:backdrop-blur-md shadow  text-white'>
                             <FontAwesomeIcon className='sm:text-xl  text-white ' icon={faSearch} />
                         </button>
                     </search>
@@ -72,7 +120,7 @@ export default function Navbar({senddata, menucon}) {
 
             <div className={`hidden sm:flex justify-center items-center md:gap-3 sm:gap-4  gap-3 `}>
 
-                <div className='flex gap-2 items-center md:px-4 sm:px-3 px-3 md:gap-5  xl:gap-2 md:h-10 sm:h-9 h-9  
+                <div className='flex gap-2 items-center md:px-3 sm:px-3 px-3 md:gap-2  xl:gap-2 md:h-9 sm:h-9 h-9  
                     rounded-full bg-[#282828]'>
                     <h1 className='text-3xl  '>+</h1>
                     <h1 className='text-sm  sm:font-semibold ' >Create</h1> 
@@ -91,12 +139,12 @@ export default function Navbar({senddata, menucon}) {
                 <div onClick={removesearch} 
                     className='h-10 px-3 flex justify-center items-center hover:bg-white/10 
                         backdrop-blur shadow hover:border-1 border-[#808080] rounded-full'>
-                    <h1 className='text-xl'>{`<`}</h1>
+                    <h1  className='text-xl'>{`<`}</h1>
                 </div>
                 <div className='flex sm:hidden  items-center  mx-3 gap-3  h-8  '>
                     <search className='flex h-full  items-center text-center border-1 border-[#282828] bg-white/10 backdrop-blur-md shadow rounded-full'
                     >
-                        <input className={` opacity-50    pl-3 rounded-l-full  text-white outline-none border-r-1 border-[#282828] hover:border-blue-400`} 
+                        <input className={` opacity-50 w-[60vw]   pl-3 rounded-l-full  text-white outline-none border-r-1 border-[#282828] hover:border-blue-400`} 
                             type='text' placeholder='Search'>
                         </input>
                             
