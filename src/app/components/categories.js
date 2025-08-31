@@ -2,7 +2,7 @@
 import '../globals.css';
 import React, { useState, useEffect } from "react";
 
-export default function Categories({handlevid}) {
+export default function Categories({handlevid, handleSearching}) {
     const [activeCategory, setActiveCategory]= useState("all")
     // const [videos, setVideos] = useState('')
 
@@ -30,7 +30,9 @@ export default function Categories({handlevid}) {
                 return(
                 <button
                 key={category}
-                onClick={()=> setActiveCategory(category)}
+                onClick={()=> {
+                  setActiveCategory(category)
+                  handleSearching('')}}
                 className={`min-w-max px-[10px] h-8 text-sm  font-semibold  cursor-pointer rounded-lg  hover:bg-white hover:text-black ${activeCategory=== category? 'bg-white text-black': 'text-white bg-[#282828]'}`}>
                 {category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>

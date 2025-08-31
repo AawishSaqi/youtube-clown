@@ -25,8 +25,8 @@ export default function Home(){
     setSearchData(data)
   }
 
-   function handlevid (data){
 
+   function handlevid (data){
     setVideos(data)
    }
 
@@ -67,10 +67,10 @@ export default function Home(){
 
              <div className={`z-10  fixed xl:top-10 md:top-14 sm:top-16 top-12  md:w-[98%]  sm:w-[97.5%] w-[98%]
                 ${menucon===true?'xl:w-[80.9%] lg:w-[82.4%] ':'xl:w-[93.2%] lg:w-[92.3%] '} `}>
-              <Categories handlevid={handlevid}  menucon={menucon}/>
+              <Categories handlevid={handlevid}  menucon={menucon} handleSearching={handleSearching}/>
             </div> 
 
-            <div className='z-0  w-full flex flex-col  xl:pt-0  md:pt-29 sm:pt-30 lg:pt-19 pt-30 xl:pl-[9px]  px-4 lg:pr-4  '>
+            <div className='z-0  w-full flex flex-col    md:pt-29 sm:pt-30 lg:pt-19 pt-30 xl:pl-[9px]  px-4 lg:pr-4  '>
               {/* <div className={` `}>
                   <VideoCard  menucon={menucon} videos={videos} searchdata={searchdata} />
               </div>
@@ -81,7 +81,7 @@ export default function Home(){
                 <VideoCard2 menucon={menucon}/>
               </div> */}
 
-            <div className='pt-20 flex justify-self-center'>
+            <div className=' flex justify-self-center'>
               <Try menucon={menucon} videos={videos} searchdata={searchdata}/>
             </div>
             </div> 
