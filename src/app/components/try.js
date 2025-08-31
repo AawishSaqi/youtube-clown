@@ -152,8 +152,8 @@ export default function Try({menucon,videos,searchdata}){
                                 src={thumbnail}
                                 alt='reels'
                                 priority
-                                width={1300}
-                                height={500}
+                                width={2000}
+                                height={2500}
                                 className={`  object-cover w-full h-full`}
                                 />
                             )}
