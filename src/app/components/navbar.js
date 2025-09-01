@@ -147,12 +147,11 @@ export default function Navbar({senddata, menucon, handleSearching }) {
                 <div className='flex sm:hidden  items-center  mx-3 gap-3  h-8  '>
                     <search className='flex h-full  items-center text-center border-1 border-[#282828] bg-white/10 backdrop-blur-md shadow rounded-full'
                     >
-                        <input className={` opacity-50 w-[60vw]   pl-3 rounded-l-full  text-white outline-none border-r-1 border-[#282828] hover:border-blue-400`} 
-                            type='text' placeholder='Search'>
+                        <input onChange={(e) => setQuery(e.target.value)} onKeyDown={handleKeyDown} className={` opacity-50 w-[60vw]   pl-3 rounded-l-full  text-white outline-none border-r-1 border-[#282828] hover:border-blue-400`} 
+                            type='text' value={query} placeholder='Search'>
                         </input>
                             
-                        <button
-                            onClick={setsearch}
+                        <button onClick={handlesearch}
                              className='  px-5 h-full rounded-r-full   text-white'>
                             <FontAwesomeIcon className='text-lg  ' icon={faSearch} />
                         </button>

@@ -9,7 +9,6 @@ import React, { useEffect, useState } from 'react';
 
 export default function Try({menucon,videos,searchdata}){
 
-
     const firstThree = videos.slice(0,3);
     const nextreels = videos.slice(3,9);
     const secondvid = videos.slice(9);
@@ -124,7 +123,7 @@ export default function Try({menucon,videos,searchdata}){
         
                 <div className=" flex gap-5 ">
                     
-                {searchdata.length > 0 ? searchdata:nextreels.slice(0,isxs ? 1:issmall? 2: ismbl?3: issm? 3: ismd ? 4 : 5).map((reel) => {
+                {(searchdata.length > 0 ? searchdata:nextreels).slice(0,isxs ? 1:issmall? 2: ismbl?3: issm? 3: ismd ? 4 : 5).map((reel) => {
                     const thumbnail = `https://img.youtube.com/vi/${reel.Id}/maxresdefault.jpg`;
         
         
