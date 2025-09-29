@@ -55,7 +55,7 @@ export default function Try({menucon,videos,searchdata}){
   
   return(
     <div>
-       <div className={`id="video-list" className="w-[100%]  flex flex-col sm:flex-wrap sm:flex-row justify-start gap-3 w-full `}>
+       <div className={`flex flex-col sm:flex-wrap sm:flex-row justify-start gap-3 w-full `}>
           {/* <VideoCard  menucon={menucon} videos={videos} searchdata={searchdata} /> */}
             {(searchdata.length > 0 ? searchdata:firstThree).map((video) => {
             const thumbnail = `https://img.youtube.com/vi/${video.Id}/hqdefault.jpg`;

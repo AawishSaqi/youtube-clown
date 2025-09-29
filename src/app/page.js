@@ -59,11 +59,11 @@ export default function Home(){
         </div>
         
       <div className='flex h-screen'>
-        <div className={`z-50 hidden sm:block ${styles.wrapper} ${menucon===true? 'xl:w-[17.8%] lg:w-[16%] sm:absolute lg:sticky  sm:w-[31%] md:w-[26%] md:top-13 sm:top-13 sm:bg-[#121111] lg:bg-transparent': 'sm:hidden  lg:block  lg:w-max'}`}>
+        <div className={`z-50 hidden sm:block ${styles.wrapper} ${menucon===true? '2xl:w-[12%] xl:w-[17.8%] lg:w-[16%] 2xl:pr- 2xl:mr-5 sm:absolute lg:sticky  sm:w-[31%] md:w-[26%] md:top-13 sm:top-13 sm:bg-[#121111] lg:bg-transparent': 'sm:hidden  lg:block  lg:w-max'}`}>
           <Sidebar menucon={menucon} handlevid={handlevid} />
         </div>
 
-        <div className={`${styles.wrapper} pb-13  ${menucon===true? 'xl:w-[83.3%] lg:w-[84%]': 'xl:w-[96%] lg:w-[97%] md:w-full'}`}>
+        <div className={`${styles.wrapper} pb-13  ${menucon===true? 'xl:w-[83.3%] lg:w-[84%] 2xl:w-full': ' xl:w-[96%] lg:w-[97%] md:w-full'}`}>
 
              <div className={`z-10  fixed xl:top-10 md:top-14 sm:top-16 top-12  md:w-[98%]  sm:w-[97.5%] w-[98%]
                 ${menucon===true?'xl:w-[80.9%] lg:w-[82.4%] ':'xl:w-[93.2%] lg:w-[92.3%] '} `}>

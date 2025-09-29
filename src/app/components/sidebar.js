@@ -211,27 +211,27 @@ export default function Sidebar ({menucon,handlevid}) {
                 <FontAwesomeIcon className={`text-xl `} icon={faBars}  onClick={togglemenu} />
             </div> */}
             <div>
-                <div className={`flex flex-col     ${menucon===true? 'pb-4  ml-[10px] pr-4     border-b-2 border-[#282828]': ' pl-1   '}`}>
+                <div className={`flex flex-col     ${menucon===true? 'pb-4  ml-[10px]  pr-4     border-b-2 border-[#282828]': ' pl-1   '}`}>
                         {/* //////////////////////home////////////////////////////   */}
                     <div className={` flex flex-col gap-2 rounded-xl  py-[10px] backdrop-blur bg-black/8 ${menucon===true? 'bg-[#262525] px-3  w-full flex flex-row gap-6 ' : 'py-[17px] hover:bg-[#282828] items-center px-1'}`} >
                         <FontAwesomeIcon className={`text-lg justify-self-center `} icon={faHouse}  />
-                        <h1 className={`${menucon===true? 'text-sm' : 'text-[.7vw]'}`}>Home</h1>
+                        <h1 className={`${menucon===true? 'text-sm ' : 'text-[.7vw] 2xl:text-[.45vw]'}`}>Home</h1>
                     </div>
                     {/* ///////////////////////////////shorts//////////////////////////////// */}
                     <div onClick={()=> window.open('https://www.youtube.com/shorts/QXcNdn7q0JA','blank')} className={`hover:bg-[#282828] flex gap-2 flex-col rounded-xl  py-[8px] ${menucon===true? ' px-3  w-full   flex flex-row gap-6' : 'py-[17px]  justify-center items-center px-1'}`} >
                         {/* <FontAwesomeIcon className='text-xl justify-self-center' icon={faVideo}  /> */}
                         <img className='w-6' src='/images/shortsbar.svg' />
-                        <h1 className={`${menucon===true? 'text-sm' : 'text-[.7vw]'}`}>Shorts</h1>
+                        <h1 className={`${menucon===true? 'text-sm' : 'text-[.7vw] 2xl:text-[.45vw]'}`}>Shorts</h1>
                     </div>
                     {/* ////////////////////////subscription///////////////////// */}
                     <div className={`hover:bg-[#282828] flex flex-col gap-2 rounded-xl py-[10px] ${menucon===true? ' px-3  w-full  flex flex-row gap-6 ' : 'py-[17px]  justify-center items-center px-1 '}`} >
                         <FontAwesomeIcon className='text-lg justify-self-center' icon={faTv}  />
-                        <h1 className={`${menucon===true? 'text-sm' : 'text-[.7vw]'}`}>Subscription</h1>
+                        <h1 className={`${menucon===true? 'text-sm' : 'text-[.7vw] 2xl:text-[.45vw]'}`}>Subscription</h1>
                </div>
                     {/* ////////////////////you///////////////////////////// */}
                     <div  onClick={()=> window.open('https://i.insider.com/5f88b6a49e9fe40019009a23?width=1200&format=jpeg', 'blank')} className={`hover:bg-[#282828] flex flex-col gap-2 rounded-xl py-[17px] justify-center items-center ${menucon===true? "hidden" : 'block px-1  '}`}>
                         <FontAwesomeIcon className='text-lg justify-self-center ' icon={faUser}  />
-                        <h1 className='text-[.7vw] '>you</h1>
+                        <h1 className='text-[.7vw] 2xl:text-[.45vw] '>you</h1>
                     </div>
                 </div> 
 
@@ -272,7 +272,7 @@ export default function Sidebar ({menucon,handlevid}) {
 
                             <div className=' flex flex-col w-full '>
                             {(showall? subscribe: subscribe.slice(0, defaultcount)).map((item, index) => (
-                                    <div key={index} className='pl-4  py-[10px]  rounded-xl hover:bg-[#282828] flex gap-6 items-center '>
+                                    <div key={index} className='pl-4 2xl:pl-0  py-[10px]  rounded-xl hover:bg-[#282828] flex gap-6 items-center '>
                                         <div className= 'w-6 h-6 rounded-full flex justify-center items-center text-center bg-blue-400 '>
                                             <h1 className='text-sm text-black leading-none ' >{item[0]}</h1>
                                         </div>
