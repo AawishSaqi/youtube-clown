@@ -31,8 +31,9 @@ export default function Categories({handlevid, handleSearching}) {
                 <button
                 key={category}
                 onClick={()=> {
+                  handleSearching([])
                   setActiveCategory(category)
-                  handleSearching('')}}
+                }}
                 className={`min-w-max px-[10px] h-8 text-sm  font-semibold  cursor-pointer rounded-lg  hover:bg-white hover:text-black ${activeCategory=== category? 'bg-white text-black': 'text-white bg-[#282828]'}`}>
                 {category.charAt(0).toUpperCase() + category.slice(1)}
                 </button>
