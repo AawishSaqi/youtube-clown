@@ -8,7 +8,7 @@ export default function Reels({menucon}) {
       { Id: 'omyIsw6NoTw', title:'Thor Vs Ironman in sakaar | #shorts', view: '1 year ago' },
       { Id: '-aSemdpz6CA', title:'Demon ne bachaya Do Hee ko❤️my demon kdrama couple love whatsapp status', view: '1 hour ago' },
       { Id: 'oJJ0ctSFlmU', title:'pitbull dog Version ☠️', view: '2 days ago' },
-      { Id: '5QtOcSUxO6E', title:'잃어버린 땅콩을 만들어 주었더니 고양이 반응 #cat #고양이 #고양이일상 #funny', view: '3 hours ago' },
+      { Id: '64F20V5DAv8', title:'Snack Shack | "We Need Summer Jobs" Clip | Paramount Movies', view: '3 hours ago' },
     ];
 
 
